@@ -4,7 +4,16 @@ import schema from './schema';
 
 const app = express();
 
-const root = { hello: () => "Hi, I'm Manny" };
+const root = { friend: () => {
+    return {
+        "id" : 1993,
+        "firstName": 'Hellomama',
+        "lastName": 'Adam',
+        "gender": 'Male',
+        "language": "English",
+        "email": "Hellomama93@gmail.com"
+    }
+}};
 
 app.use('/graphql', graphqlHTTP({
     schema: schema,
