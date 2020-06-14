@@ -33,6 +33,8 @@ const root = { friend: () => {
     },
     createFriend: ({input}) =>{
         let id = require('crypto').randomBytes(10).toString('hex');
+        friendDatabase[id] = input;
+        return new Friend(id, input)
     }
 };
 
